@@ -46,8 +46,25 @@ $lightGrayishBlue: hsl(207, 33%, 95%);
   }
 }
 
+html {
+  font-size: 62.5%; //1rem = 10px
+  @include respond(phone) {
+    font-size: 50%; //1rem = 8px
+  }
+  @include respond(tab-land) {
+    font-size: 50%; //1rem = 8px
+  }
+  @include respond(tab-port) {
+    font-size: 56.25%; //1rem = 9px
+  }
+  @include respond(big-desktop) {
+    font-size: 75%; //1rem = 12px
+  }
+}
+
 body {
   font-family: 'Barlow', sans-serif;
+  font-size: 1.8rem;
 }
 
 .attribution {
