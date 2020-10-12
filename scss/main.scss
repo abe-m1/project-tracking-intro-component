@@ -21,6 +21,7 @@ $veryDarkBlue: hsl(230, 29%, 20%);
 $darkGrayishBlue: hsl(230, 11%, 40%);
 $grayishBlue: hsl(231, 7%, 65%);
 $lightGrayishBlue: hsl(207, 33%, 95%);
+$white: #fff;
 
 //mixins
 @mixin respond($breakpoint) {
@@ -63,13 +64,250 @@ html {
 }
 
 body {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 1.8rem;
+  position: relative;
+}
+.content {
+  overflow: hidden;
+  height: 100vh;
+}
+.back-image {
+  background-color: $lightGrayishBlue;
+  height: 50vh;
+  width: 48vw;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  border-bottom-left-radius: 5rem;
+
+  @include respond(phone) {
+    height: 53vh;
+    border-bottom-left-radius: 4rem;
+    width: 40vw;
+  }
+}
+.container {
+  width: 80%;
+  margin: auto;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 16rem;
+  align-items: center;
+  margin-bottom: 3.5rem;
+
+  @include respond(phone) {
+    height: 10rem;
+    margin-bottom: 3.3rem;
+  }
+}
+.menu {
+  display: flex;
+  justify-content: flex-end;
+
+  @include respond(phone) {
+    display: none;
+  }
+}
+.menu-item {
+  list-style: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  &:not(:last-child) {
+    margin-right: 4rem;
+  }
+  &:last-child {
+    color: $grayishBlue;
+
+    &:hover {
+      border-bottom: 1px solid $grayishBlue;
+    }
+  }
+}
+.logo {
+  width: 3.3rem;
+
+  @include respond(phone) {
+    width: 3rem;
+  }
+}
+.split {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // height: 80vh;
+
+  @include respond(phone) {
+    display: block;
+  }
+}
+.right {
+  margin-top: 1rem;
+  margin-right: -20rem;
+  order: 1;
+
+  @include respond(phone) {
+    margin-bottom: 9rem;
+  }
+}
+.device-image {
+  width: 122%;
+  @include respond(phone) {
+    width: 90%;
+  }
+}
+.top-line {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  @include respond(phone) {
+    margin-bottom: 1.8rem;
+  }
 }
 
+.mono {
+  color: $grayishBlue;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+}
+.new {
+  background-color: black;
+  color: $white;
+  border-radius: 20px;
+  padding: 0.3rem 1rem;
+  margin-right: 2rem;
+}
+
+.main-headline {
+  text-transform: uppercase;
+  width: 80%;
+  font-size: 6.7rem;
+  margin-bottom: 3rem;
+
+  @include respond(phone) {
+    width: 100%;
+    font-size: 4.3rem;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+  }
+}
+
+.sub-headline {
+  font-family: 'Barlow', sans-serif;
+  margin-bottom: 4rem;
+  color: $grayishBlue;
+  width: 56%;
+  @include respond(phone) {
+    width: 96%;
+    margin-bottom: 3rem;
+    font-size: 2.1rem;
+  }
+}
+.schedule-button {
+  background-color: $red;
+  border: none;
+  color: $white;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  margin-right: 2rem;
+  text-transform: uppercase;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+
+  @include respond(phone) {
+    padding: 1.5rem 4rem;
+    margin-right: 1rem;
+  }
+}
+.preview-button {
+  background-color: $white;
+  border: none;
+  color: $grayishBlue;
+  text-transform: uppercase;
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 0.6rem;
+  font-size: 1.2rem;
+  @include respond(phone) {
+    letter-spacing: 0.4rem;
+  }
+}
+
+.hamburger {
+  display: none;
+
+  @include respond(phone) {
+    display: block;
+    width: 4rem;
+  }
+}
+
+.circle {
+  border: 1px solid $grayishBlue;
+  width: 5px;
+  height: 5px;
+  background-color: $grayishBlue;
+  border-radius: 5px;
+  position: absolute;
+  top: 7.4rem;
+}
+
+#nav-button {
+  display: none;
+  @include respond(phone) {
+    display: block;
+  }
+}
+
+.nav-container {
+  background-color: $white;
+  display: none;
+  position: absolute;
+  top: 13%;
+  left: 10%;
+  width: 80%;
+  text-align: center;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  padding: 2.7rem 3rem 2.7rem 2rem;
+}
+.show {
+  display: block !important;
+}
+.hide {
+  display: none !important;
+}
+.close {
+  display: none;
+}
+.ham-item {
+  text-transform: uppercase;
+  &:not(:last-child) {
+    margin-bottom: 2.4rem;
+  }
+
+  list-style: none;
+  font-weight: 700;
+  font-size: 2.1rem;
+  &:nth-child(3) {
+    margin-bottom: 2.6rem;
+  }
+
+  &:nth-child(5) {
+    color: $grayishBlue;
+  }
+}
+.seperator {
+  background-color: $grayishBlue;
+  margin-bottom: 2.6rem;
+}
 .attribution {
   font-size: 11px;
   text-align: center;
+  @include respond(phone) {
+    display: none;
+  }
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
