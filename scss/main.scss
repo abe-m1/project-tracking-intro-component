@@ -71,6 +71,10 @@ body {
 .content {
   overflow: hidden;
   height: 100vh;
+
+  @include respond(phone) {
+    height: auto;
+  }
 }
 .back-image {
   background-color: $lightGrayishBlue;

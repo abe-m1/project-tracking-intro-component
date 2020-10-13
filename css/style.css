@@ -34,6 +34,9 @@ body {
 .content {
   overflow: hidden;
   height: 100vh; }
+  @media (max-width: 600px) {
+    .content {
+      height: auto; } }
 
 .back-image {
   background-color: #eef3f6;
