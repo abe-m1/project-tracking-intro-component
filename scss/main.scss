@@ -95,6 +95,7 @@ body {
     width: 84%;
   }
 }
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -106,47 +107,51 @@ body {
     height: 11rem;
     margin-bottom: 2.9rem;
   }
-}
-.menu {
-  display: flex;
-  justify-content: flex-end;
 
-  @include respond(phone) {
-    display: none;
-  }
-}
-.menu-item {
-  list-style: none;
-  text-transform: uppercase;
-  font-weight: 700;
-  border-bottom: 1px solid transparent;
-  font-size: 1.7rem;
-  &:not(:last-child) {
-    margin-right: 4.1rem;
+  &__logo {
+    width: 3rem;
 
-    &:hover {
-      border-bottom: 1px solid $darkGrayishBlue;
+    @include respond(phone) {
+      width: 2.8rem;
     }
   }
-  &:last-child {
-    color: $grayishBlue;
 
-    &:hover {
-      border-bottom: 1px solid $grayishBlue;
+  &__menu {
+    display: flex;
+    justify-content: flex-end;
+
+    @include respond(phone) {
+      display: none;
+    }
+  }
+  &__menu-item {
+    list-style: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-bottom: 1px solid transparent;
+    font-size: 1.7rem;
+    &:not(:last-child) {
+      margin-right: 4.1rem;
+
+      &:hover {
+        border-bottom: 1px solid $darkGrayishBlue;
+      }
+    }
+    &:last-child {
+      color: $grayishBlue;
+
+      &:hover {
+        border-bottom: 1px solid $grayishBlue;
+      }
     }
   }
 }
+
 .circle-item {
   margin-right: 5rem !important;
 }
-.logo {
-  width: 3rem;
 
-  @include respond(phone) {
-    width: 2.8rem;
-  }
-}
-.split {
+.main-content {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,37 +160,41 @@ body {
   @include respond(phone) {
     display: block;
   }
-}
-.right {
-  margin-top: 1rem;
-  margin-right: -9rem;
-  order: 1;
-  flex: 50%;
 
-  @include respond(phone) {
-    margin-bottom: 9rem;
-    flex: none;
-    margin-right: -20rem;
+  &__right {
+    margin-top: 1rem;
+    margin-right: -9rem;
+    order: 1;
+    flex: 50%;
+
+    @include respond(phone) {
+      margin-bottom: 9rem;
+      flex: none;
+      margin-right: -20rem;
+    }
+  }
+
+  &__left {
+    flex: 50%;
+    margin-top: -4rem;
+    @include respond(phone) {
+      flex: none;
+      margin-top: 0;
+    }
   }
 }
 
-.left {
-  flex: 50%;
-  margin-top: -4rem;
-  @include respond(phone) {
-    flex: none;
-    margin-top: 0;
-  }
-}
 .device-image-container {
   width: 100%;
-  // position: absolute;
   position: relative;
-  top: 0;
+  top: -1.5rem;
+  @include respond(phone) {
+    top: 0;
+  }
 }
 
 .device-image {
-  width: 150%;
+  width: 163%;
   @include respond(phone) {
     width: 100%;
     margin-left: -2.4rem;
@@ -346,7 +355,6 @@ body {
   }
 }
 .seperator {
-  // background-color: $grayishBlue;
   border: 1px solid $lightGrayishBlue;
   margin-bottom: 2.6rem;
 }
